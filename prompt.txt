@@ -1,0 +1,32 @@
+The Problem:
+        
+        Recycling of materials is a key aspect to creating a more sustainable world. One problem that comes
+        along with recycling however is when non-recyclable are included in a recycling bin. There are many
+        things to consider when your household waste is being placed into a recycling bin. The term aspirational
+        recycler has been coined for when people take non-recyclable or soiled (most commonly with food) and
+        place them into a recycling bin. This is done in hopes that they are recyclable and wanting to do the
+        right thing for the environment, however, when these non-recyclable item are placed into a bin they can
+        contaminate all of the recyclables in that bin. In this case the best of intentions results in large amounts
+        of recyclable ending up in landfills because they cannot be processed.
+
+Your Assignment:
+       
+        Develop a program to help assist in the above problem description. This program can take many forms
+        and there are no right or wrong ways to approach this problem. You could consider a possible
+        “gamification” of the recycling problem, an educational tool, an automated solution to prevent miss use
+        or recycling bins, etc.
+       
+        Things to consider:
+
+                - This project is intentionally left open ended so have fun when programming it and work towards
+                an innovative solution
+
+                - Points will be given for “creativity and innovation” these points will be rewarded based on a
+                level of effort that is seen in the project.
+
+                - Holding a brainstorming session with your group on just how to tackle this problem can be
+                useful in getting your thoughts organized. This session should be held up front to set the course
+                of the project and get everyone working towards the final goal.
+                
+                - The key to a great project is to have fun in creating it, so do some reading and research and
+                brainstorm a solution that can help the world!
