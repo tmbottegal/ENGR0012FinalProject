@@ -30,3 +30,21 @@ Your Assignment:
                 
                 - The key to a great project is to have fun in creating it, so do some reading and research and
                 brainstorm a solution that can help the world!
+                
+Requirements:
+        • You will need to create two app features that the user can select from. These features should all be completely different from
+        each other. A feature refers to something the user can do with the app.
+        • In comments, write a brief explanation of your app and how it is supposed to work.
+        You need to include at least five functions.
+        • No more than one of the required functions can be a no-input and no-output function.
+        • You are required to use at least three loops (you decide whether to use while loops, do-while loops, or for loops).
+        • You are required to use at least one branching structure (either if statements or switch-cases).
+        • You are NOT allowed to use global variables.
+        • Your main function should be set up such that you give the user the different app feature options, and the user selects which
+        one they would like to do.
+        • Include a comment with team number and team member names in each file you submit.
+        • Include comments, indentation, and whitespace so that your program is neat and understandable to anyone who reads it.
+        You will be graded based on whether all the above criteria were met, and also on the creativity and challenge demonstrated in the app.
+        
+This is a team submission. Please name your file InstructorLastName_ClassTime_Project_Team# (for example:
+Balawejder_5pm_Project_Team5) and submit your file through the assignment link in your section’s Canvas site.
