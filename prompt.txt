@@ -55,8 +55,8 @@ Balawejder_5pm_Project_Team5) and submit your file through the assignment link i
 
 Feature 1:
 
-        Quiz system. Functions will be on seperate topics, each with an input and an output to pass along and add to a score
+        Quiz system. Functions will be on seperate topics with a randomized question pool, each with an input and an output to pass along and add to a score
 
 Feature 2:
 
-        <missing>        
+        Recycling trivia, randomized with a pool   
