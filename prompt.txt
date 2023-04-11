@@ -49,3 +49,9 @@ Requirements:
         
 This is a team submission. Please name your file InstructorLastName_ClassTime_Project_Team# (for example:
 Balawejder_5pm_Project_Team5) and submit your file through the assignment link in your section’s Canvas site.
+
+
+Feature 1:
+
+Quiz system. Functions will be on seperate topics, each with an input and an output to pass along and add to a score
+
