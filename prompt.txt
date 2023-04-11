@@ -32,6 +32,7 @@ Your Assignment:
                 brainstorm a solution that can help the world!
                 
 Requirements:
+
         • You will need to create two app features that the user can select from. These features should all be completely different from
         each other. A feature refers to something the user can do with the app.
         • In comments, write a brief explanation of your app and how it is supposed to work.
