@@ -1,3 +1,13 @@
+// FYEC Group 73's Aspirational Recycling Prevention Program!
+// Asseel Alrashdi, Timothy Bottegal, Chris Callix
+
+/*
+This program has two features, a quiz and a trivia section. Users are initally asked to choose one of the two.
+Quiz Section: User is presented with a question on aspirational recycling, and enters their answer in the form of ('a'||'b'||'c'||'d'). Their answer is verified, and if correct, a point is added.
+Trivia Section: User is presented with a piece of trivia about aspirational recycling, and must press any key to continue onto the next.
+Once complete with either section, user is prompted with the option to restart program.
+*/
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,10 +16,10 @@
 int verify(char answer, char solution, int score) {
     if (answer == solution) {
         score++;
-        printf("Correct! Your score is now %d",score);
+        printf("\nCorrect! Your score is now %d",score);
     }
     else {
-        printf("Incorrect.");
+        printf("\nIncorrect.");
     }
     return score;
 }
@@ -47,7 +57,7 @@ int quiz() {
     while (count <= 10) {
         switch (count) {
             case 1:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -63,7 +73,7 @@ int quiz() {
 
             break;
             case 2:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -79,7 +89,7 @@ int quiz() {
 
             break;
             case 3:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -95,7 +105,7 @@ int quiz() {
 
             break;
             case 4:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -111,7 +121,7 @@ int quiz() {
 
             break;
             case 5:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -127,7 +137,7 @@ int quiz() {
 
             break;
             case 6:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -143,7 +153,7 @@ int quiz() {
 
             break;
             case 7:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -159,7 +169,7 @@ int quiz() {
                 
             break;
             case 8:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -175,7 +185,7 @@ int quiz() {
                 
             break;
             case 9:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
@@ -191,7 +201,7 @@ int quiz() {
                 
             break;
             case 10:
-                printQuestion(1, "", "", "", "", "");
+                printQuestion(count, "", "", "", "", "");
                 scanf("%c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(answer);
