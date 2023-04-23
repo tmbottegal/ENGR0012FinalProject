@@ -232,61 +232,61 @@ int trivia() {
     while (count <= 10) {
         switch (count) {
             case 1:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 2:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 3:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 4:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 5:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 6:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 7:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 8:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 9:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
             break;
             case 10:
-                printf("\nTrivia %d:\n\tDid you know that ",count);
+                printf("\nTrivia %d: Did you know that ",count);
                 printf("");
                 printf("\n\nEnter any character to continue.");
                 scanf(" %c", &anykey);
@@ -334,7 +334,9 @@ int main () {
         while (!valid) {
             switch (again) {
                 case 'y':
-                    valid == true;
+                    again = 'y';
+                    valid = true;
+                    
                 break;
                 case 'n':
                     exit(420);
