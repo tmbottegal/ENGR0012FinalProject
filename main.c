@@ -13,213 +13,263 @@ Once complete with either section, user is prompted with the option to restart p
 #include <stdlib.h>
 #include <stdbool.h>
 
-int verify(char answer, char solution, int score) {
-    if (answer == solution) {
-        score++;
-        printf("\nCorrect! Your score is now %d",score);
+int verifyAnswer(char answer, char solution, char supplement[], int score) {
+    if (solution != 'o') {
+        if (answer == solution) {
+            score++;
+            printf("\nCorrect! %s Your score is now %d.\n", supplement, score);
+        }
+        else {
+            printf("\nIncorrect.\n");
+        }  
     }
     else {
-        printf("\nIncorrect.");
+        printf("\nQuestion not filled out yet.\n");
     }
     return score;
 }
 
-void printQuestion(int number, char question[], char alpha[], char beta[], char gamma[], char delta[]) {
-    printf("\n%d. %s",number, question);
-    printf("\n\ta. %s", alpha);
-    printf("\n\tb. %s", beta);
-    printf("\n\tc. %s", gamma);
-    printf("\n\td. %s", delta);
-    printf("\n\t\t");
+void printQuestion(int type, int number, char question[], char alpha[], char beta[], char gamma[], char delta[]) {
+    switch (type) {
+        case 4:
+            printf("\n%d. %s",number, question);
+            printf("\n\ta. %s", alpha);
+            printf("\n\tb. %s", beta);
+            printf("\n\tc. %s", gamma);
+            printf("\n\td. %s", delta);
+            printf("\n\n");
+        break;
+        case 2:
+            printf("\n%d. %s",number, question);
+            printf("\n\ta. %s", alpha);
+            printf("\n\tb. %s", beta);
+            printf("\n\n");
+        break;
+    }
 }
 
-bool checkAnswerValidity(char answer) {
-    switch (answer) {
-        case 'a':
-        case 'b':
-        case 'c':
-        case 'd':
-            return true;
+bool checkAnswerValidity(int type, char answer) {
+    switch (type) {
+        case 4:
+            switch (answer) {
+                case 'a':
+                case 'b':
+                case 'c':
+                case 'd':
+                    return true;
+                break;
+                default:
+                    return false;
+            }
         break;
-        default:
-            return false;
+        case 2:
+            switch (answer) {
+                case 'a':
+                case 'b':
+                    return true;
+                break;
+                default:
+                    return false;
+            }
+        break;
+    }   
+}
+
+void answerFormatReminder(int type)
+{
+    switch (type) {
+        case 4:
+            printf("Please answer with (a|b|c|d). ");
+        break;
+        case 2:
+            printf("Please answer with (a|b). ");
     }
 }
 
 int quiz() {
 
-    printf("\n Welcome to the Aspirirational Recycling Quiz!");
+    printf("\n Welcome to the Aspirirational Recycling Quiz!\n");
 
-    int count = 1, score = 0;
+    int score = 0, count = 1;
     char answer;
+    char solution;
     bool valid = false;
 
     while (count <= 10) {
         switch (count) {
             case 1:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "Approximately how many tons of unrecycled plastic end up in the oceans each year?", "6.7 million", "2.1 billion", "8.8 million", "200,000");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'c', "That's enough plastic to cover every meter of coastline in the world with five trash bags every year!", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
 
             break;
             case 2:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "What percentage of plastic waste worldwide has ever been recycled?", "55%", "10%", "75%", "30%");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'b', "90-91% of all plastics are not even recycled. We've got a long way to go.", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
 
             break;
             case 3:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "Don't recycle anything smaller than a...", "pizza box", "silver dollar", "drink cup", "credit card");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'd', "Things smaller than a credit card can jam sorting machines at recycling plants, slowing them down.", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
 
             break;
             case 4:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "What should you never do with your recyclables before putting them into a recepticle?", "Put them in a plastic bag, then put them in", "Empty, clean and dry them", "Flatten any boxes", "Confirm they can be recycled");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'a', "While it may seem kind to make your recycling easier to handle, plastic bags, especially the traditional grocery style bags, can get tangled in heavy machinery, and shut them down.", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
 
             break;
             case 5:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "", "", "", "", "");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'o', "", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
 
             break;
             case 6:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "", "", "", "", "");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'o', "", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
 
             break;
             case 7:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "", "", "", "", "");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'o', "", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
                 
             break;
             case 8:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "", "", "", "", "");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'o', "", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
                 
             break;
             case 9:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "", "", "", "", "");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'o', "", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
                 
             break;
             case 10:
-                printQuestion(count, "", "", "", "", "");
-                scanf("%c",&answer);
+                printQuestion(4, count, "", "", "", "", "");
+                scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(answer);
+                    valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verify(answer, 'e', score);
+                        score = verifyAnswer(answer, 'o', "", score);
                         break;
                         case false:
-                        printf("Please answer with (a|b|c|d). ");
-                        scanf("%c",&answer);
+                        answerFormatReminder(4);
+                        scanf(" %c",&answer);
                     }
                 }
+                valid = false;
                
             break;
         }
         count++;
     }
-
     return score;
 }
 
@@ -302,7 +352,7 @@ int main () {
     char again = 'y';
 
     while (again = 'y') {
-        printf("Welcome the Aspirational Recycling Prevention Program.");
+        printf("\n\nWelcome the Aspirational Recycling Prevention Program.");
         printf("\nPlease select Quiz or Trivia. (1|2) ");
         scanf("%d",&userchoice);
         while (!valid) {
@@ -321,7 +371,7 @@ int main () {
         switch (userchoice) {
             case 1:
                 score = quiz();
-                printf("\nThank you for completing our quiz! Your score was %d/10!",score);
+                printf("\nThank you for completing our quiz! Your score was %d/10!", score);
             break;
             case 2:
                 trivia();
