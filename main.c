@@ -2,10 +2,10 @@
 // Asseel Alrashdi, Timothy Bottegal, Chris Callix
 
 /*
-This program has two features, a quiz and a trivia section. Users are initally asked to choose one of the two.
-Quiz Section: User is presented with a question on aspirational recycling, and enters their answer in the form of ('a'||'b'||'c'||'d'). Their answer is verified, and if correct, a point is added.
-Trivia Section: User is presented with a piece of trivia about aspirational recycling, and must press any key to continue onto the next.
-Once complete with either section, user is prompted with the option to restart program.
+This program has two features, a quiz and a trivia section. Users are initally asked to choose one of the two, which is error checked indefinitely.
+Quiz Section: User is presented with a question on aspirational recycling, and enters their answer in the form of ('a'||'b'||'c'||'d') or ('a'||'b'), which is error checked indefinitely. Their answer is verified, and if correct, a point is added.
+Trivia Section: User is presented with a piece of trivia about aspirational recycling, and must input any character to continue onto the next.
+Once complete with either section, user is prompted with the option to restart program, which is error checked indefinitely.
 */
 
 #include <math.h>
@@ -14,6 +14,10 @@ Once complete with either section, user is prompted with the option to restart p
 #include <stdbool.h>
 
 int verifyAnswer(char answer, char solution, char supplement[], int score) {
+
+    // Function takes in the user's answer, the given solution, the supplementary text, and the user's existing score, and compares answer and solution. 
+    // If a match, a point is added and the supplementary text is displayed. Returns the user's modified score.
+
     if (solution != 'o') {
         if (answer == solution) {
             score++;
@@ -30,6 +34,10 @@ int verifyAnswer(char answer, char solution, char supplement[], int score) {
 }
 
 void printQuestion(int type, int number, char question[], char alpha[], char beta[], char gamma[], char delta[]) {
+
+    // Function takes in the question type, question number, the question itself, and all of the possible answers.
+    // It displays question number, the question itself, either all 4 or just 2 of the possible answers depending on the question type.
+
     switch (type) {
         case 4:
             printf("\n%d. %s",number, question);
@@ -49,6 +57,9 @@ void printQuestion(int type, int number, char question[], char alpha[], char bet
 }
 
 bool checkAnswerValidity(int type, char answer) {
+    
+    // Function takes in the question type and the user's answer. Depending on the question type, it returns a boolean representing the validity of the user's answer.
+    
     switch (type) {
         case 4:
             switch (answer) {
@@ -75,8 +86,10 @@ bool checkAnswerValidity(int type, char answer) {
     }   
 }
 
-void answerFormatReminder(int type)
-{
+void answerFormatReminder(int type) {
+
+    // Function takes in the question type. Depending on question type, it prompts the user with the correct formatting.
+
     switch (type) {
         case 4:
             printf("Please answer with (a|b|c|d). ");
@@ -87,6 +100,8 @@ void answerFormatReminder(int type)
 }
 
 int quiz() {
+
+    // Function operates the quiz feature of the program. The function has 10 questions to go through in a while loop, calling the appropriate functions to do sub-tasks. Function outputs the user's final score.
 
     printf("\n Welcome to the Aspirirational Recycling Quiz!\n");
 
@@ -273,8 +288,10 @@ int quiz() {
     return score;
 }
 
-int trivia() {
+void trivia() {
     
+    // Function operates the trivia feature of the program. The function is our only no-input, no-output function. The function has 10 bits of trivia to go through in a while loop, waiting for the user to input anything to move on to the next.
+
     printf("\n Welcome to the Trivia section!\n");
 
     int count = 1;
@@ -347,6 +364,9 @@ int trivia() {
 }
 
 int main () {
+    
+    // Asks the user to select a feature, then runs the related function. Once either function is complete, the user is asked if they would like to repeat the program.
+
     int userchoice, score;
     bool valid = false;
     char again = 'y';
@@ -377,16 +397,12 @@ int main () {
                 trivia();
         }
 
-        // Recomplete Loop
-        // TODO : 'y' does not seem to loop back up to the top
         printf("\nWould you like to recomplete the ARPP? (y|n) ");
         scanf(" %c",&again);
         while (!valid) {
             switch (again) {
                 case 'y':
-                    again = 'y';
                     valid = true;
-                    
                 break;
                 case 'n':
                     exit(420);
