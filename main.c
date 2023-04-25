@@ -177,7 +177,7 @@ int quiz() {
 
             break;
             case 5:
-                printQuestion(4, count, "What does the term “100% recycled” determine, and does that guarantee that it is recyclable?", "The item is 100% recyclable, yes", "The item is made from 100% recycled material, yes", "The item is made from 100% recycled material, no", "The item has already been recycled before, no");
+                printQuestion(4, count, "What does the term \"100% recycled\" determine, and does that guarantee that it is recyclable?", "The item is 100% recyclable, yes", "The item is made from 100% recycled material, yes", "The item is made from 100% recycled material, no", "The item has already been recycled before, no");
                 scanf(" %c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(4, answer);
@@ -295,68 +295,69 @@ void trivia() {
     while (count <= 10) {
         switch (count) {
             case 1:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Did you know that people became more conscious of aspirational recycling, otherwise known as \"wishcycling,\" after China set new rules for international waste management?");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 2:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Single-use plastic bags are considered \"soft plastic,\" which makes them ineligible for recycling.");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 3:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Many organic products inform consumers about their packaging's recyclability.");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 4:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Shredded paper is very difficult to recycle, since it's not compatible with most recycling plant machinery.");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 5:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Recycling containers of hazardous waste is dangerous, even when emptied!");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 6:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Paperboard boxes designed for frozen foods have a coat of plastic polymer to prevent freezer burn, and because of the polymer the boxes can't be recycled.");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 7:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Even though black plastic is recyclable, it often ends up in landfills due to waste sorting systems not recognizing black pigments.");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 8:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Toothpaste containers are frequent contaminators of recycling due to the different plastics and bits of aluminum stuck inside.");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 9:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Approximately 1 billion trees worth of paper are thrown away and not recycled each year in the US.");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
             case 10:
-                printf("\nTrivia %d: Did you know that ",count);
-                printf("");
-                printf("\n\nEnter any character to continue.");
+                printf("\n\nRecycling Trivia #%d: ",count);
+                printf("Each ton of of recycled paper can save 17 trees, 380 gallons of oil, three cubic yards of landfill space, 4,000 kilowatts of energy, and 7,000 gallons of water.");
+                printf("\n\nEnter any character to continue. ");
                 scanf(" %c", &anykey);
             break;
         }
         count++;
     }
+    printf("\n\nThat's all the trivia we have!\n\n");
 }
 
 int main () {
@@ -387,7 +388,7 @@ int main () {
         switch (userchoice) {
             case 1:
                 score = quiz();
-                printf("\nThank you for completing our quiz! Your score was %d/10!", score);
+                printf("\nThank you for completing our quiz! Your score was %d/10!\n", score);
             break;
             case 2:
                 trivia();
@@ -404,7 +405,7 @@ int main () {
                     exit(420);
                 break;
                 default:
-                    printf("\nInvalid choice. Would you like to recomplete the ARPP? (y|n) ");
+                    printf("Invalid choice. Would you like to recomplete the ARPP? (y|n) ");
                     scanf(" %c",&again);
             }
          }
