@@ -181,13 +181,13 @@ int quiz() {
 
             break;
             case 5:
-                printQuestion(4, count, "", "", "", "", "");
+                printQuestion(4, count, "What does the term “100% recycled” determine, and does that guarantee that it is recyclable?", "The item is 100% recyclable, yes", "The item is made from 100% recycled material, yes", "The item is made from 100% recycled material, no", "The item has already been recycled before, no");
                 scanf(" %c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verifyAnswer(answer, 'o', "", score);
+                        score = verifyAnswer(answer, 'c', "While an item that has been made from recycled material may have a greater chance of being recycled again, that does not guarentee that it is recyclable again.", score);
                         break;
                         case false:
                         answerFormatReminder(4);
@@ -198,13 +198,13 @@ int quiz() {
 
             break;
             case 6:
-                printQuestion(4, count, "", "", "", "", "");
+                printQuestion(4, count, "Which of the following cannot be recycled?", "To-go coffee cups", "Used plastic cutlery", "Sugar glass bottles", "Cellotape");
                 scanf(" %c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verifyAnswer(answer, 'o', "", score);
+                        score = verifyAnswer(answer, 'a', "To-go coffee cups typically contain a small film of plastic to prevent the liquid from dissolving the cup. The combination of these two in an item makes it not recyclable.", score);
                         break;
                         case false:
                         answerFormatReminder(4);
@@ -215,16 +215,16 @@ int quiz() {
 
             break;
             case 7:
-                printQuestion(4, count, "", "", "", "", "");
+                printQuestion(2, count, "Washing or rinsing out items before recycling them is not necessary.", "True", "False", "", "");
                 scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(4, answer);
+                    valid = checkAnswerValidity(2, answer);
                     switch (valid) {
                         case true:
-                        score = verifyAnswer(answer, 'o', "", score);
+                        score = verifyAnswer(answer, 'b', "Cleaning items before recycling them is paramount. Contaminants such as food residue can make an item non-recyclable.", score);
                         break;
                         case false:
-                        answerFormatReminder(4);
+                        answerFormatReminder(2);
                         scanf(" %c",&answer);
                     }
                 }
@@ -232,13 +232,13 @@ int quiz() {
                 
             break;
             case 8:
-                printQuestion(4, count, "", "", "", "", "");
+                printQuestion(4, count, "Recycling contamination, the result of aspirational recycling, is occuring at a rate of...", "12%", "8%", "17%", "5%");
                 scanf(" %c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verifyAnswer(answer, 'o', "", score);
+                        score = verifyAnswer(answer, 'c', "The contamination of otherwise good recycling is a major problem. Recyclable material is forced into landfill due to aspirational recycling.", score);
                         break;
                         case false:
                         answerFormatReminder(4);
@@ -249,16 +249,16 @@ int quiz() {
                 
             break;
             case 9:
-                printQuestion(4, count, "", "", "", "", "");
+                printQuestion(2, count, "Using a reusable item instead of recycling one is better for the environment.", "True", "False", "", "");
                 scanf(" %c",&answer);
                 while (!valid) {
-                    valid = checkAnswerValidity(4, answer);
+                    valid = checkAnswerValidity(2, answer);
                     switch (valid) {
                         case true:
-                        score = verifyAnswer(answer, 'o', "", score);
+                        score = verifyAnswer(answer, 'a', "Using a reusable item prevents the use of a single-use item, which is better for the enviroment reguardless of its recyclability.", score);
                         break;
                         case false:
-                        answerFormatReminder(4);
+                        answerFormatReminder(2);
                         scanf(" %c",&answer);
                     }
                 }
@@ -266,13 +266,13 @@ int quiz() {
                 
             break;
             case 10:
-                printQuestion(4, count, "", "", "", "", "");
+                printQuestion(4, count, "Which item is recyclable?", "Shattered glass", "Yogurt and butter tubs", "Pizza boxes", "Flexible mail packaging");
                 scanf(" %c",&answer);
                 while (!valid) {
                     valid = checkAnswerValidity(4, answer);
                     switch (valid) {
                         case true:
-                        score = verifyAnswer(answer, 'o', "", score);
+                        score = verifyAnswer(answer, 'b', "These tubs, as long as they are clean of any food contaminants, are recyclable in most areas.", score);
                         break;
                         case false:
                         answerFormatReminder(4);
