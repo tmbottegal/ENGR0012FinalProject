@@ -18,18 +18,14 @@ int verifyAnswer(char answer, char solution, char supplement[], int score) {
     // Function takes in the user's answer, the given solution, the supplementary text, and the user's existing score, and compares answer and solution. 
     // If a match, a point is added and the supplementary text is displayed. Returns the user's modified score.
 
-    if (solution != 'o') {
-        if (answer == solution) {
-            score++;
-            printf("\nCorrect! %s Your score is now %d.\n", supplement, score);
-        }
-        else {
-            printf("\nIncorrect.\n");
-        }  
+    if (answer == solution) {
+        score++;
+        printf("\nCorrect! %s Your score is now %d.\n", supplement, score);
     }
     else {
-        printf("\nQuestion not filled out yet.\n");
-    }
+        printf("\nIncorrect.\n");
+    }  
+    
     return score;
 }
 
